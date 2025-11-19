@@ -7,9 +7,9 @@ module Views
       @pagy = pagy
     end
 
-    def template
+    def view_template
       table class: "h-full border-r border-gray-300", id: 'table' do
-        caption id: "booksTableCaption", class: "h-0 overflow-hidden" do
+        caption id: :books_table_caption, class: "h-0 overflow-hidden" do
           i class: "bi-table", aria_hidden: "true"
           "Main View"
         end

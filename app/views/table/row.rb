@@ -8,8 +8,8 @@ module Views
         @inline_edit = inline_edit
       end
 
-      def template
-        tr(**classes("row-group hover:bg-gray-100 has-checked:bg-blue-100",
+      def view_template
+        tr(class: tokens("row-group hover:bg-gray-100 has-checked:bg-blue-100",
                -> { !@expanded } => "sr-only"), id: dom_id(@record, :row), data_groupable_target: "row") do
           select_cell
           attributes.each do |attribute|

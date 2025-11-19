@@ -35,7 +35,7 @@ class MenuComponent < ApplicationComponent
     @attributes = attributes
   end
 
-  def template
+  def view_template
     render PopoverComponent.new(role: :menu, side: @side, align: @align, **attributify(struct.root, @attributes)) do |popover|
       @popover = popover
 

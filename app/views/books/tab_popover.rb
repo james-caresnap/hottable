@@ -6,13 +6,13 @@ module Views
       @active = active
     end
 
-    def template
+    def view_template
       render PopoverComponent.new(role: :menu, align: :start, **details_attributes) do |popover|
         @popover = popover
 
         @popover.trigger class: "px-4 py-2 flex items-center gap-1" do
           render Bootstrap::IconComponent.new(@icon) if @icon
-          text @title
+          span { @title }
         end
 
         yield
@@ -26,12 +26,12 @@ module Views
     private
 
     def details_attributes
+      classes = ["z-40 border-transparent group rounded-t rounded-b-none inline-flex items-center border-b font-medium"]
+      classes << "text-white hover:bg-violet-900 open:bg-violet-900 hover:border-white" if inactive?
+      classes << "bg-white text-gray-800 hover:bg-gray-100" if active?
+
       {
-        class: tokens(
-          "z-40 border-transparent group rounded-t rounded-b-none inline-flex items-center border-b font-medium",
-          inactive?: "text-white hover:bg-violet-900 open:bg-violet-900 hover:border-white",
-          active?: "bg-white text-gray-800 hover:bg-gray-100"
-        ),
+        class: classes.join(" "),
         data: {
           details_set_target: "child"
         }

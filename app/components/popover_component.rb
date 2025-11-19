@@ -20,7 +20,7 @@ class PopoverComponent < ApplicationComponent
       @role = role
       @side = side
       @align = align
-      @popover_id = "popover-#{@role}-#{object_id}"
+      @popover_id = :"popover-#{@role}-#{object_id}"
     end
 
     def root
@@ -101,10 +101,10 @@ class PopoverComponent < ApplicationComponent
     @align = align
     raise InvalidAlign.new(align) unless [:start, :center, :end].include? align
     @attributes = attributes
-    @popover_id = "details-popover-#{@role}-#{object_id}"
+    @popover_id = :"details-popover-#{@role}-#{object_id}"
   end
 
-  def template(&block)
+  def view_template(&block)
     details(**attributify(struct.root, @attributes), &block)
   end
 
@@ -119,7 +119,7 @@ class PopoverComponent < ApplicationComponent
   end
 
   def portal(**attributes, &block)
-    div(**attributify(struct.portal, attributes), &block)
+    div(**normalize_portal_attributes(attributes), &block)
   end
 
   def struct
@@ -148,5 +148,14 @@ class PopoverComponent < ApplicationComponent
     when :right
       :right
     end
+  end
+  def normalize_portal_attributes(custom_attributes)
+    merged = attributify(struct.portal, custom_attributes)
+    id_value = merged.delete(:id) || merged.delete("id")
+    if id_value
+      normalized = id_value.to_s.downcase
+      merged[:id] = normalized.to_sym
+    end
+    merged
   end
 end

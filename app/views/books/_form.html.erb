@@ -1,7 +1,7 @@
 <%= search_form_for(
   search,
   url: search_books_path,
-  html: { id: "searchForm", method: :post, autocomplete: :off, autocapitalize: :none, class: "", data: { controller: "details-set" }, class: "flex justify-between items-center w-full" }
+  html: { id: :search_form, method: :post, autocomplete: :off, autocapitalize: :none, class: "", data: { controller: "details-set" }, class: "flex justify-between items-center w-full" }
 ) do |f| %>
 
   <div class="body-has-checked:visible invisible justify-between items-center ml-0.5">
@@ -16,7 +16,7 @@
     </button>
   </div>
 
-  <input type="hidden" form="searchForm" name="current_view" value="<%= params.dig(:current_view) %>">
+  <input type="hidden" form="search_form" name="current_view" value="<%= params.dig(:current_view) %>">
 
   <div class="space-x-2">
     <%= render "books/form/fields", f: %>

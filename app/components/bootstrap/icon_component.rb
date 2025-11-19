@@ -6,7 +6,7 @@ module Bootstrap
       @attributes = attributes
     end
 
-    def template
+    def view_template
       i **attributify(icon_attributes, @attributes)
     end
 

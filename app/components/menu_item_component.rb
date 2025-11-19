@@ -24,7 +24,7 @@ class MenuItemComponent < ApplicationComponent
     @attributes = attributes
   end
 
-  def template
+  def view_template
     public_send(@element, **menuitem_attributes) do
       render Bootstrap::IconComponent.new(@icon) if @icon
       @text ? span { @text } : yield

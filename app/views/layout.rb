@@ -4,7 +4,7 @@ module Views
     include Propshaft::Helper
     include ActionView::Helpers::AssetTagHelper
 
-    def template(&)
+    def view_template(&)
       doctype
 
       html do

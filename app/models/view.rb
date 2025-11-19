@@ -1,5 +1,6 @@
 class View < ApplicationRecord
   validates :name, presence: true, uniqueness: true
 
-  serialize :parameters, JSON
+  attribute :parameters, :json, default: {}
+
 end

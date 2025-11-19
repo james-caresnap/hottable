@@ -7,7 +7,7 @@ module Views
         @search = search
       end
 
-      def template
+      def view_template
         tr class: "bg-gray-100 sticky top-12 z-10 bg-gray-100" do
           th colspan: "2", scope: "rowgroup", class: "sticky left-0 p-0 align-middle bg-gray-100" do
             button class: "group p-2 w-full flex items-center",

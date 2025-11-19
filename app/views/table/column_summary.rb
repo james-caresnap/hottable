@@ -7,12 +7,12 @@ module Views
         @calculation = calculation
       end
 
-      def template
+      def view_template
         td id: [@attribute, "summary"].join("_") do
           form action: summarize_books_path, method: "get", accept_charset: "UTF-8", class: "text-right space-y-1 px-2", data: { controller: "element"} do
             div class: "whitespace-nowrap" do
               input type: "hidden", name: "attribute", value: @attribute
-              select name: "calculation", id: "calculation", dir: "rtl", class: "bg-transparent border-transparent rounded text-gray-600 hover:bg-gray-300", data: { action: "change->element#click" }, autocomplete: "off" do
+              select name: "calculation", id: :calculation, dir: "rtl", class: "bg-transparent border-transparent rounded text-gray-600 hover:bg-gray-300", data: { action: "change->element#click" }, autocomplete: "off" do
                 option(value: "", selected: (@calculation == "")) { "None" }
                 option(value: "nil", selected: (@calculation == "nil")) { "Empty" }
                 option(value: "not_nil", selected: (@calculation == "not_nil")) { "Filled" }
@@ -49,7 +49,7 @@ module Views
         input type: "hidden",
               name: "authenticity_token",
               autocomplete: "off",
-              value: @_view_context.form_authenticity_token
+              value: view_context.form_authenticity_token
       end
     end
   end

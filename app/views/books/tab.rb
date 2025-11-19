@@ -6,7 +6,7 @@ module Views
       @rename_id = "rename_#{@view_name}"
     end
 
-    def template
+    def view_template
       if current_page?
         render(Books::TabPopover.new(@view.name, active: current_page?)) do |t|
           t.body do
@@ -32,7 +32,7 @@ module Views
               div class: "p-2" do
                 label(for: "views_name", class: "block text-sm font-medium text-gray-700") { "Name" }
                 div class: "mt-1" do
-                  input type: "text", value: @view.name, name: "views[#{@view.id}][name]", form: "searchForm", id: "views_name", class: "block w-full text-gray-900 rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm", placeholder: "e.g. 20th century English novels"
+                  input type: "text", value: @view.name, name: "views[#{@view.id}][name]", form: "searchForm", id: :views_name, class: "block w-full text-gray-900 rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm", placeholder: "e.g. 20th century English novels"
                 end
               end
 
@@ -44,7 +44,7 @@ module Views
         end
       else
         a id: tab_id, href: books_path(@view.parameters.merge(current_view: @view.name)),
-          **classes("relative z-40 group rounded-t inline-flex items-center font-medium text-white border-b border-transparent px-4 py-2 hover:border-white hover:bg-violet-900",
+          class: tokens("relative z-40 group rounded-t inline-flex items-center font-medium text-white border-b border-transparent px-4 py-2 hover:border-white hover:bg-violet-900",
             current_page?: "bg-white text-gray-800 hover:bg-gray-100"),
           aria_current: tokens(current_page?: "page") do
           span { @view.name }

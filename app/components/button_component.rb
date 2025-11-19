@@ -32,13 +32,13 @@ class ButtonComponent < ApplicationComponent
     @attributes = attributes
   end
 
-  def template(&block)
+  def view_template(&block)
     if block_given?
       public_send(@element, **button_attributes, &block)
     else
       public_send(@element, **button_attributes) do
         render Bootstrap::IconComponent.new(@icon) if @icon
-        text @text
+        span { @text }
       end
     end
   end

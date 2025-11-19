@@ -5,7 +5,7 @@ module Views
         @search = search
       end
 
-      def template
+      def view_template
         thead class: "bg-gray-50" do
           tr class: "h-12" do
             select_cell
@@ -26,7 +26,7 @@ module Views
            id: 'column_select' do
           label for: "selectAll", class: "absolute inset-0"
           input type: "checkbox",
-                id: "selectAll",
+                id: :select_all,
                 class: "rounded border-gray-300 text-blue-600 focus:ring-blue-500",
                 name: "selectAll",
                 form: "searchForm",
