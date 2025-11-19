@@ -37,3 +37,7 @@
 .DS_Store
 .gem/
 .cache/
+
+
+package-lock.json
+.claude
