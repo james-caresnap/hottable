@@ -16,7 +16,7 @@ module Views
                   span { "Rename view" }
                   input id: @rename_id, type: "checkbox", checked: false, class: "sr-only peer"
                 end
-                render MenuItemComponent.new(as: :button, type: "submit", form: "searchForm", formaction: view_path(@view.id), class: "w-full", icon: "sliders2", text: "Update view")
+                render MenuItemComponent.new(as: :button, type: "submit", form: "search_form", formaction: view_path(@view.id), class: "w-full", icon: "sliders2", text: "Update view")
               end
               unless @view.name == "Books!"
                 div class: "py-1" do
@@ -32,12 +32,12 @@ module Views
               div class: "p-2" do
                 label(for: "views_name", class: "block text-sm font-medium text-gray-700") { "Name" }
                 div class: "mt-1" do
-                  input type: "text", value: @view.name, name: "views[#{@view.id}][name]", form: "searchForm", id: :views_name, class: "block w-full text-gray-900 rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm", placeholder: "e.g. 20th century English novels"
+                  input type: "text", value: @view.name, name: "views[#{@view.id}][name]", form: "search_form", id: :views_name, class: "block w-full text-gray-900 rounded-md border-gray-300 shadow-xs focus:border-blue-500 focus:ring-blue-500 sm:text-sm", placeholder: "e.g. 20th century English novels"
                 end
               end
 
               div class: "flex items-center justify-end gap-2 py-2 px-4 bg-gray-200" do
-                input type: "submit", value: "Save", form: "searchForm", formaction: view_path(@view.id), class: "inline-flex items-center rounded-md border border-transparent bg-blue-500 hover:bg-blue-400 text-white px-2.5 py-1.5 text-base font-medium text-gray-900 gap-2"
+                input type: "submit", value: "Save", form: "search_form", formaction: view_path(@view.id), class: "inline-flex items-center rounded-md border border-transparent bg-blue-500 hover:bg-blue-400 text-white px-2.5 py-1.5 text-base font-medium text-gray-900 gap-2"
               end
             end
           end

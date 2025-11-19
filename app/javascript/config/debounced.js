@@ -1,3 +1,3 @@
 import debounced from 'debounced'
 
-debounced.initialize({ input: { wait: 500 } })
+debounced.initialize(['input', 'change'], { input: { wait: 500 } })

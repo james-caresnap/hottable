@@ -88,13 +88,9 @@ module Views
       def sort_dir = @search.sorts.find { |sort| sort.attr_name == @attribute }.dir
       def sort_dir_indicator
         if sort_dir == "asc"
-          svg class: "h-3 w-3 text-orange-500 order-first", viewBox: "0 0 425 233.7", fill: "currentColor", focusable: "false", aria_hidden: "true" do
-            path d: "M414.4 223.1L212.5 21.2 10.6 223.1"
-          end
+          render SortAscIcon.new
         else
-          svg class: "h-3 w-3 text-orange-500 order-last", viewBox: "0 0 425 233.7", fill: "currentColor", focusable: "false", aria_hidden: "true" do
-            path d: "M10.6 10.6l201.9 201.9L414.4 10.6"
-          end
+          render SortDescIcon.new
         end
       end
 

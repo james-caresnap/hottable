@@ -43,12 +43,12 @@ module Views
           div class: "p-2" do
             label(for: "views_name", class: "block text-sm font-medium text-gray-700") { "Name" }
             div class: "mt-1" do
-              input type: "text", name: "views[name]", form: "searchForm", id: :views_name, class: "block w-full text-gray-900 rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm", placeholder: "e.g. 20th century English novels"
+              input type: "text", name: "views[name]", form: "search_form", id: :views_name, class: "block w-full text-gray-900 rounded-md border-gray-300 shadow-xs focus:border-blue-500 focus:ring-blue-500 sm:text-sm", placeholder: "e.g. 20th century English novels"
             end
           end
 
           div class: "flex items-center justify-end gap-2 py-2 px-4 bg-gray-200" do
-            render ButtonComponent.new(as: :input, type: "submit", value: "Save", form: "searchForm", formaction: views_path, primary: true)
+            render ButtonComponent.new(as: :input, type: "submit", value: "Save", form: "search_form", formaction: views_path, primary: true)
           end
         end
       end

@@ -30,7 +30,7 @@
           <legend class="sr-only">Select group behavior</legend>
 
           <div class="flex items-center justify-between gap-2">
-            <%= b.label :expanded, value: true, class: "flex-1 relative flex cursor-pointer rounded-lg border bg-white px-2.5 py-1.5 shadow-sm focus:outline-none" do %>
+            <%= b.label :expanded, value: true, class: "flex-1 relative flex cursor-pointer rounded-lg border bg-white px-2.5 py-1.5 shadow-xs focus:outline-none" do %>
               <%= b.radio_button :expanded, true, checked: b.object.expanded == true || b.object.expanded.nil?, class: "sr-only peer" %>
 
               <span class="flex flex-1">
@@ -46,7 +46,7 @@
               <span class="pointer-events-none absolute -inset-px rounded-lg border-2 border-transparent peer-checked:border-blue-500" aria-hidden="true"></span>
             <% end %>
 
-            <%= b.label :expanded, value: false, class: "flex-1 relative flex cursor-pointer rounded-lg border bg-white px-2.5 py-1.5 shadow-sm focus:outline-none" do %>
+            <%= b.label :expanded, value: false, class: "flex-1 relative flex cursor-pointer rounded-lg border bg-white px-2.5 py-1.5 shadow-xs focus:outline-none" do %>
               <%= b.radio_button :expanded, false, checked: b.object.expanded == false, class: "sr-only peer" %>
               <span class="flex flex-1">
                 <span class="flex flex-col">

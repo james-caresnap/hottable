@@ -31,10 +31,10 @@ module Views
               div class: "flex justify-end gap-1" do
                 input type: "reset", value: "Cancel", class: "cursor-pointer inline-flex items-center rounded-md border border-transparent bg-gray-200 px-2 py-1 text-base font-medium text-gray-900 hover:bg-gray-300"
 
-                input type: "submit", value: "Apply", class: "inline-flex items-center rounded-md border border-transparent bg-blue-500 px-2 py-1 text-base font-medium text-white shadow-sm hover:bg-blue-400"
+                input type: "submit", value: "Apply", class: "inline-flex items-center rounded-md border border-transparent bg-blue-500 px-2 py-1 text-base font-medium text-white shadow-xs hover:bg-blue-400"
               end
             end
-            input type: "submit", name: "pagy", hidden: true, data: { 'element-target': "click" }
+            input type: "submit", name: "pagy", hidden: true, data: { element_target: "click" }
             authenticity_token_input
           end
         end

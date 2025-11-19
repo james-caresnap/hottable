@@ -1,6 +1,19 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@plugin "@tailwindcss/forms";
+
+@theme {
+  --min-width-12: 3rem;   /* 48px */
+  --min-width-72: 18rem;  /* 288px */
+  --min-width-80: 20rem;  /* 320px */
+  --min-width-96: 24rem;  /* 384px */
+  --min-height-16: 4rem;  /* 64px */
+  --max-width-12: 3rem;   /* 48px */
+  --max-width-72: 18rem;  /* 288px */
+  --max-width-80: 20rem;  /* 320px */
+  --max-width-96: 24rem;  /* 384px */
+  --max-width-screen: 100vw;
+}
 
 html, body { height: 100% }
 

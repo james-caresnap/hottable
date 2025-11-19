@@ -29,7 +29,7 @@ module Views
                 id: :select_all,
                 class: "rounded border-gray-300 text-blue-600 focus:ring-blue-500",
                 name: "selectAll",
-                form: "searchForm",
+                form: "search_form",
                 data: {
                   action: "checkbox-set#matchAll",
                   checkbox_set_target: "parent"

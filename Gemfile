@@ -21,8 +21,8 @@ gem "ransack", "~> 4.4"
 gem "redis", "~> 4.0"
 gem "stimulus-rails"
 
-gem "turbo-rails", "~> 1.3.0"
-gem "turbo_power", "~> 0.1.2"
+gem "turbo-rails"
+gem "turbo_power"
 gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 
 group :development, :test do

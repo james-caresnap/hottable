@@ -34,7 +34,7 @@ module Views
                 id: select_identifier,
                 class: "hidden [.row-group:hover_&]:inline-block checked:inline-block peer rounded border-gray-300 text-blue-600 focus:ring-blue-500",
                 name: "select[#{@record.id}]",
-                form: "searchForm",
+                form: "search_form",
                 aria: {
                   labelledby: "row_1 column_select"
                 },
